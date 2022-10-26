@@ -1,0 +1,24 @@
+﻿@model baiTapTuan3.Models.Rectangle
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (@Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h2>Acreage - Perimeter of the Rectangle</h2>
+    <span class="editspan">Mời nhập chiều dài: </span>
+    @*@Html.LabelFor(x => x.ChieuDai, new { @class = "control-label" })*@
+    @Html.TextBoxFor(x => x.ChieuDai, new { @class = "form-control" })
+    @*@Html.ValidationMessageFor(x => x.ChieuDai)*@
+    <span class="editspan">Mời nhập chiều rộng: </span>
+    @Html.TextBoxFor(x => x.ChieuRong, new { @class = "form-control" })
+    <button class="btn btn-primary">Tính Toán</button>
+    <a class="btn btn-default" ,href='@Url.Action("Index","Rectangle")'>Tiếp Tục</a>
+    <br />
+    @ViewBag.ThongBao2
+    <br />
+    @ViewBag.ThongBao3
+    @ViewBag.ThongBao1
+}

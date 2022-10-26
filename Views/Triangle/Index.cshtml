@@ -1,0 +1,24 @@
+﻿@model baiTapTuan3.Models.Triangle
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (@Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h2>Acreage - Perimeter of the triangle</h2>
+    <span class="editspan">Mời nhập Cạnh đầu tiên: </span>
+    @Html.TextBoxFor(x => x.CanhThu1, new { @class = "form-control" })
+    <span class="editspan">Mời nhập Cạnh thứ 2: </span>
+    @Html.TextBoxFor(x => x.CanhThu2, new { @class = "form-control" })
+    <span class="editspan">Mời nhập Cạnh thứ 3: </span>
+    @Html.TextBoxFor(x => x.CanhThu3, new { @class = "form-control" })
+    <button class="btn btn-primary">Tính Toán</button>
+    <a class="btn btn-default" , href='@Url.Action("Index","Triangle")'>Tiếp Tục</a>
+    <br />
+    @ViewBag.ThongBao1
+    <br />
+    @ViewBag.ThongBao2
+    @ViewBag.ThongBao3
+}

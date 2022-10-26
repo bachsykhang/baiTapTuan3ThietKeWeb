@@ -1,0 +1,24 @@
+﻿@model baiTapTuan3.Models.Circle
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h2>Calculating for the Circle</h2>
+    <span class="editspan">Mời nhập bán kính: </span>
+    @Html.TextBoxFor(x => x.BanKinh, new { @class = "form-control" })
+    <button class="btn btn-primary">Tính Toán</button>
+    <a class="btn btn-default", href='@Url.Action("Index","Circle")'>Tiếp Tục</a>
+    <br />
+    @ViewBag.TinNhan1
+    <br />
+    @ViewBag.TinNhan2
+    @ViewBag.TinNhan3
+}
+
+
+
+
